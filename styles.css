@@ -98,6 +98,10 @@ a {
 .section-header h2 {
     font-size: 2.5rem;
     margin-bottom: var(--space-md);
+    background: linear-gradient(135deg, var(--clr-accent), #66FFaa, var(--clr-text-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .section-header p {
@@ -186,6 +190,64 @@ a {
 .btn-lg {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
+}
+
+/* =========================================
+   SCROLL PROGRESS BAR
+   ========================================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--clr-accent), #66FFaa);
+    z-index: 1001;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px var(--clr-accent-glow);
+}
+
+/* =========================================
+   SECTION DIVIDERS
+   ========================================= */
+.section-padding {
+    position: relative;
+}
+
+.section-padding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+    border-radius: 2px;
+}
+
+.hero::before {
+    display: none;
+}
+
+/* =========================================
+   SECTION TRANSITIONS (Gradients between sections)
+   ========================================= */
+.section-padding::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer::after,
+.hero::after {
+    display: none;
 }
 
 /* =========================================
@@ -986,10 +1048,13 @@ a {
 .step-number {
     font-size: 3rem;
     font-weight: 800;
-    color: var(--clr-accent);
     line-height: 1;
     margin-bottom: var(--space-md);
-    text-shadow: 0 0 15px var(--clr-accent-glow);
+    background: linear-gradient(180deg, var(--clr-accent), rgba(0, 255, 102, 0.3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px var(--clr-accent-glow));
 }
 
 .step-content h3 {
@@ -1215,6 +1280,16 @@ a {
 .service-card.featured {
     border-color: var(--clr-accent);
     box-shadow: 0 0 20px rgba(0, 255, 102, 0.08);
+    animation: featured-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes featured-glow {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 255, 102, 0.05);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 102, 0.15), 0 0 60px rgba(0, 255, 102, 0.05);
+    }
 }
 
 .service-badge {
@@ -1310,9 +1385,31 @@ a {
     transition: var(--transition-smooth);
 }
 
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25D366;
+    animation: wa-pulse 2s infinite;
+    z-index: -1;
+}
+
 .whatsapp-float:hover {
     transform: translateY(-4px) scale(1.1);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes wa-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
 }
 
 /* =========================================

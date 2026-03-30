@@ -13,14 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 100);
 
-    // 2. Navbar Scroll Effect
-    // Añade sombra si hacemos scroll
+    // 2. Navbar Scroll Effect + Scroll Progress Bar
     const navbar = document.querySelector('.navbar');
+    const scrollProgress = document.getElementById('scrollProgress');
+
     window.addEventListener('scroll', () => {
+        // Navbar shadow
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+
+        // Scroll progress bar
+        if (scrollProgress) {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
         }
     });
 
