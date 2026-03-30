@@ -950,6 +950,216 @@ a {
 }
 
 /* =========================================
+   TESTIMONIALS SECTION
+   ========================================= */
+.testimonials {
+    background-color: var(--clr-bg);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.testimonial-card {
+    background-color: var(--clr-surface);
+    border: 1px solid var(--clr-dark-border);
+    border-radius: 8px;
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--clr-accent);
+    box-shadow: 0 5px 20px rgba(0, 255, 102, 0.05);
+}
+
+.testimonial-quote {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--clr-accent);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 0 10px var(--clr-accent-glow);
+}
+
+.testimonial-card > p {
+    color: var(--clr-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: var(--space-lg);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    border-top: 1px solid var(--clr-dark-border);
+    padding-top: var(--space-md);
+}
+
+.testimonial-info strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--clr-text-main);
+}
+
+.testimonial-info span {
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+}
+
+/* =========================================
+   SERVICES SECTION
+   ========================================= */
+.services {
+    background-color: var(--clr-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    align-items: stretch;
+}
+
+.service-card {
+    background-color: var(--clr-dark-surface);
+    border: 1px solid var(--clr-dark-border);
+    border-radius: 8px;
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--clr-accent);
+    box-shadow: 0 10px 40px rgba(0, 255, 102, 0.1);
+}
+
+.service-card.featured {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.08);
+}
+
+.service-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    filter: drop-shadow(0 0 5px var(--clr-accent-glow));
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-sm);
+}
+
+.service-duration {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-accent);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.service-card > p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+}
+
+.service-includes {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    margin-bottom: var(--space-xl);
+    border-top: 1px solid var(--clr-dark-border);
+    padding-top: var(--space-md);
+}
+
+.service-includes li {
+    padding: 0.5rem 0;
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-includes li::before {
+    content: '✓';
+    color: var(--clr-accent);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.service-card .btn-primary {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* =========================================
+   WHATSAPP FLOATING BUTTON
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 9998;
+    transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* =========================================
+   FOOTER CTA BUTTONS
+   ========================================= */
+.footer-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================
    ANIMATIONS
    ========================================= */
 .fade-in {
