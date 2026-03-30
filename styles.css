@@ -563,6 +563,20 @@ a {
     text-shadow: 0 0 10px var(--clr-accent-glow);
 }
 
+.case-budget {
+    font-size: 0.85rem;
+    color: var(--clr-accent);
+    background-color: rgba(0, 255, 102, 0.05);
+    border-left: 3px solid var(--clr-accent);
+    padding: 0.4rem 0.8rem;
+    margin-bottom: var(--space-sm);
+    border-radius: 0 4px 4px 0;
+}
+
+.case-budget strong {
+    color: var(--clr-text-main);
+}
+
 .case-solution {
     font-size: 0.95rem;
     color: #A0A0A0;
@@ -947,6 +961,158 @@ a {
     font-size: 1.2rem;
     z-index: -1;
     /* Queda detrás de la imagen real */
+}
+
+/* =========================================
+   PROCESS / CÓMO TRABAJO SECTION
+   ========================================= */
+.process {
+    background-color: var(--clr-bg);
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    position: relative;
+}
+
+.process-step {
+    text-align: center;
+    padding: var(--space-lg);
+    position: relative;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--clr-accent);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    text-shadow: 0 0 15px var(--clr-accent-glow);
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.step-time {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-accent);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.step-content p {
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Connector line between steps (desktop only) */
+@media (min-width: 769px) {
+    .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        right: -1rem;
+        width: 2rem;
+        height: 2px;
+        background: linear-gradient(to right, var(--clr-accent), transparent);
+    }
+}
+
+/* =========================================
+   CONTACT FORM SECTION
+   ========================================= */
+.contact-form {
+    background-color: var(--clr-dark);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--clr-text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: var(--clr-dark-surface);
+    border: 1px solid var(--clr-dark-border);
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--clr-text-main);
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23A0A0A5' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+.form-group select option {
+    background-color: var(--clr-dark-surface);
+    color: var(--clr-text-main);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group button {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================================
