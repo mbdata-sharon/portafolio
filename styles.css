@@ -1026,6 +1026,242 @@ a {
 }
 
 /* =========================================
+   SAAS SHOWCASE (InmobiliaryAI)
+   ========================================= */
+.saas-showcase {
+    background-color: var(--clr-dark);
+}
+
+.saas-showcase .section-header .badge {
+    margin-bottom: var(--space-md);
+}
+
+.saas-showcase .section-header p {
+    max-width: 700px;
+}
+
+/* Problema + Solución */
+.saas-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.saas-problem,
+.saas-solution {
+    padding: var(--space-lg);
+    border-radius: 8px;
+    border: 1px solid var(--clr-dark-border);
+}
+
+.saas-problem {
+    background-color: rgba(255, 60, 60, 0.03);
+    border-color: rgba(255, 60, 60, 0.2);
+}
+
+.saas-problem h3 {
+    color: #FF6B6B;
+    margin-bottom: var(--space-sm);
+}
+
+.saas-solution {
+    background-color: rgba(0, 255, 102, 0.03);
+    border-color: rgba(0, 255, 102, 0.2);
+}
+
+.saas-solution h3 {
+    color: var(--clr-accent);
+    margin-bottom: var(--space-sm);
+}
+
+.saas-problem p,
+.saas-solution p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 3 Pilares */
+.saas-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.pillar-card {
+    background-color: var(--clr-dark-surface);
+    border: 1px solid var(--clr-dark-border);
+    border-radius: 8px;
+    padding: var(--space-xl) var(--space-lg);
+    transition: var(--transition-smooth);
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--clr-accent);
+    box-shadow: 0 10px 40px rgba(0, 255, 102, 0.1);
+}
+
+.pillar-card.featured {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.08);
+}
+
+.pillar-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(180deg, var(--clr-accent), rgba(0, 255, 102, 0.3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-sm);
+}
+
+.pillar-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-sm);
+}
+
+.pillar-card > p {
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.pillar-features {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--clr-dark-border);
+    padding-top: var(--space-md);
+}
+
+.pillar-features li {
+    padding: 0.4rem 0;
+    color: var(--clr-text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pillar-features li::before {
+    content: '▸';
+    color: var(--clr-accent);
+    font-weight: 700;
+}
+
+/* Flujo Visual */
+.saas-flow {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-xl) var(--space-lg);
+    background-color: var(--clr-dark-surface);
+    border: 1px solid var(--clr-dark-border);
+    border-radius: 8px;
+}
+
+.saas-flow h3 {
+    margin-bottom: var(--space-lg);
+}
+
+.flow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 100px;
+}
+
+.flow-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 5px var(--clr-accent-glow));
+}
+
+.flow-label {
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+    text-align: center;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    color: var(--clr-accent);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* Tech Stack Badges */
+.saas-stack {
+    margin-bottom: var(--space-xl);
+}
+
+.saas-stack h3 {
+    margin-bottom: var(--space-lg);
+}
+
+.stack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: rgba(0, 255, 102, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    letter-spacing: 0.5px;
+    transition: var(--transition-fast);
+}
+
+.tech-badge:hover {
+    background-color: rgba(0, 255, 102, 0.1);
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 10px var(--clr-accent-glow);
+    transform: translateY(-2px);
+}
+
+/* CTAs */
+.saas-cta {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .saas-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-arrow {
+        display: none;
+    }
+
+    .flow-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--space-md);
+    }
+}
+
+/* =========================================
    PROCESS / CÓMO TRABAJO SECTION
    ========================================= */
 .process {
