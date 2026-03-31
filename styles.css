@@ -391,10 +391,92 @@ a {
     text-shadow: 0 0 15px var(--clr-accent-glow);
 }
 
+/* Hero Role Rotator */
+.hero-role-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+}
+
+.hero-role-static {
+    color: var(--clr-text-main);
+}
+
+.hero-role-rotator {
+    position: relative;
+    display: inline-block;
+    min-width: 280px;
+    height: 1.2em;
+    overflow: hidden;
+    vertical-align: baseline;
+}
+
+.hero-role {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--clr-accent);
+    text-shadow: 0 0 15px var(--clr-accent-glow);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-role.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-role.exit {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* Hero Skill Badges */
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--space-lg);
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(0, 255, 102, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    letter-spacing: 0.5px;
+}
+
+/* Hero Building Line */
+.hero-building {
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.hero-building a {
+    color: var(--clr-accent);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+    transition: var(--transition-fast);
+}
+
+.hero-building a:hover {
+    border-bottom-color: var(--clr-accent);
+    text-shadow: 0 0 10px var(--clr-accent-glow);
+}
+
 .hero-subtitle {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: var(--clr-text-muted);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
     max-width: 600px;
 }
 
@@ -1784,6 +1866,15 @@ a {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-role-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero-role-rotator {
+        min-width: 200px;
     }
 
     .hero-cta {

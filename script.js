@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 100);
 
+    // 1.5. Hero Role Rotator
+    const roles = document.querySelectorAll('.hero-role');
+    if (roles.length > 0) {
+        let currentRole = 0;
+        setInterval(() => {
+            roles[currentRole].classList.remove('active');
+            roles[currentRole].classList.add('exit');
+            setTimeout(() => {
+                roles[currentRole].classList.remove('exit');
+                currentRole = (currentRole + 1) % roles.length;
+                roles[currentRole].classList.add('active');
+            }, 500);
+        }, 2500);
+    }
+
     // 2. Navbar Scroll Effect + Scroll Progress Bar
     const navbar = document.querySelector('.navbar');
     const scrollProgress = document.getElementById('scrollProgress');
